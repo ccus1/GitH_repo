@@ -17,6 +17,10 @@ begin
   for i := 0 to Length(p) - 1 do
     WriteLn(Format('%x', [Int64(p[i])]));
 end;
+sd
+
+
+sdfs
 
 procedure ToFile(fn: String; p: array of Pointer);
 var
@@ -27,6 +31,8 @@ begin
   Rewrite(FileOut);
   for i := 0 to Length(p) - 1 do
     WriteLn(FileOut, Format('%x', [Int64(p[i])]));
+    
+    dsfd
   CloseFile(FileOut);
 end;
 
