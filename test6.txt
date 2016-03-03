@@ -1,0 +1,33 @@
+unit uToOut;
+
+interface
+
+  procedure ToScreen(p: array of Pointer);
+  procedure ToFile(fn: String; p: array of Pointer);
+
+implementation
+
+uses
+    SysUtils;
+
+procedure ToScreen(p: array of Pointer);
+var
+  i: Integer;
+begin
+  for i := 0 to Length(p) - 1 do
+    WriteLn(Format('%x', [Int64(p[i])]));
+end;
+
+procedure ToFile(fn: String; p: array of Pointer);
+var
+  FileOut: TextFile;
+  i: Integer;
+begin
+  AssignFile(FileOut, fn);
+  Rewrite(FileOut);
+  for i := 0 to Length(p) - 1 do
+    WriteLn(FileOut, Format('%x', [Int64(p[i])]));
+  CloseFile(FileOut);
+end;
+
+end.
