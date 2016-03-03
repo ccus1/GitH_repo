@@ -23,11 +23,16 @@ var
   FileOut: TextFile;
   i: Integer;
 begin
+fgdf
+dfg
   AssignFile(FileOut, fn);
   Rewrite(FileOut);
   for i := 0 to Length(p) - 1 do
     WriteLn(FileOut, Format('%x', [Int64(p[i])]));
   CloseFile(FileOut);
 end;
+dfg
+dfg
+fg
 
 end.
